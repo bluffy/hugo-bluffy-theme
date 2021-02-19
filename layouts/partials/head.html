@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-en" }}">
+    <head>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ .Title }}</title>{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}{{ with .Site.Params.author }}
+        <meta name="author" content="{{ . }}">{{ end }}{{ with .OutputFormats.Get "RSS" }}
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .RelPermalink }}" />{{ end }}{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" false) }}{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">   
+    </head>
+    <body{{ if isset .Params "id" }} id="{{ .Params.id }}"{{ end }}>

@@ -1,0 +1,45 @@
+        <footer>
+            <div id="info-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="content">
+                                <div class="title">Kontakt</div>
+                                <div class="body">
+                                    Tel.: 07552 - 92 89-177<br>
+                                    Fax: 07552 - 92 89-199<br>
+                                    Email: <a class="a-footer" href="mailto:info@ageb-ag.de">info@AGEB-AG.de</a>								
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-6">
+                            <div class="content">
+                                <div class="title">Adresse</div>
+                                <div class="body">
+                                        Garnmarktgasse 3<br>
+                                        88630 Pfullendorf						
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-sm-12 col-lg-3">
+                            <div class="content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="copy-right-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                    Copyright &copy; {{ now.Year }} AGEB AG | <a href="{{ .Site.BaseURL }}impressum/">Impressum</a> | <a href="{{ .Site.BaseURL }}datenschutz/">Datenschutzerklärung</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+{{ partial "foot.html" . }}
