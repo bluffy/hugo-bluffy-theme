@@ -1,0 +1,7 @@
+baseurl = "https://example.org"
+title = "Bluffy Basic"
+theme = "hugo-bluffy-theme"
+themesDir = "../.."
+languageCode = "en-us"
+
+defaultContentLanguage = "en"
