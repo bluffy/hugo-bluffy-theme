@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "de-de" }}">
+
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ .Title }}</title>
+    {{ with .Site.Params.description }}
+    <meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.author }}
+    <meta name="author" content="{{ . }}">{{ end }}
+    {{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}
+    {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <script>
+       var jssor = [];
+    </script>
+    
+</head>
+
+<body {{ if isset .Params "id" }}id="{{ .Params.id }}"  {{ end }}>
+
+    <header>
+
+    </header>
+
+
+
+
+		<main>
+
+            <p>hello</p>
+
+        </main>
+
+
+
+
+
+
+	<footer>
+        <div id="info-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="content">
+                            <div class="title">Kontakt</div>
+                            <div class="body">
+                                Tel.: 07552 - 92 89-177<br>
+                                Fax: 07552 - 92 89-199<br>
+                                Email: <a class="a-footer" href="mailto:info@ageb-ag.de">info@AGEB-AG.de</a>								
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-6">
+                        <div class="content">
+                            <div class="title">Adresse</div>
+                            <div class="body">
+                                    Garnmarktgasse 3<br>
+                                    88630 Pfullendorf						
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12  col-sm-12 col-lg-3">
+                        <div class="content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copy-right-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content">
+                                Copyright &copy; {{ now.Year }} AGEB AG | <a href="{{ .Site.BaseURL }}impressum/">Impressum</a> | <a href="{{ .Site.BaseURL }}datenschutz/">Datenschutzerklärung</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="/js/jquery-1.11.3.min.js" ></script> -->
+
+
+
+
+</body>
+</html>
+
